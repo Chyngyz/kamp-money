@@ -5,7 +5,9 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
+import { SigninComponent } from './signin/signin.component';
+import { CreateComponent } from './create/create.component';
+import { MainComponent } from './main/main.component';
 import { ApiService } from './shared';
 import { routing } from './app.routing';
 
@@ -21,7 +23,9 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent
+    SigninComponent,
+    CreateComponent,
+    MainComponent
   ],
   providers: [
     ApiService

@@ -1,0 +1,16 @@
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: 'San Francisco', sans-serif;
+    background-color: #fff;
+    position: relative;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    @include box-sizing(border-box);
+}
