@@ -1,0 +1,36 @@
+.kmp {
+    &__btn {
+        display: block;
+        font-size: 1.2rem;
+        text-align: center;
+        padding: 20px;
+        border-radius: 8px;
+        
+
+        &--primary {
+            background-color: #2196f3;
+            color: #fff;
+            background-color: #2196f3;
+        }
+
+        &--outline {
+            background-color: #fff;
+            color: #2196f3;
+            border: 1px solid #2196f3;
+        }
+
+        &--sticky {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            border-radius: 0;
+        }
+
+        &--white {
+            border-top: 1px solid #2196f3;
+            background-color: #fff;
+            color: #2196f3;
+        }
+    }
+}

@@ -2,6 +2,7 @@ import { NgModule, ApplicationRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
+import MaskedInput from 'angular2-text-mask';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -13,6 +14,11 @@ import { routing } from './app.routing';
 
 import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
 
+import {
+  LocationStrategy,
+  HashLocationStrategy
+} from '@angular/common';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -21,6 +27,7 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
     routing
   ],
   declarations: [
+    MaskedInput,
     AppComponent,
     HomeComponent,
     SigninComponent,
@@ -28,7 +35,8 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
     MainComponent
   ],
   providers: [
-    ApiService
+    ApiService,
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
   bootstrap: [AppComponent]
 })

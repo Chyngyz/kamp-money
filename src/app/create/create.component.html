@@ -4,7 +4,7 @@
 
 <div class="kmp__signin">
   <div class="kmp__input">
-    <input type="number" placeholder="Ваш номер телефона">
+    <input type="tel" placeholder="Ваш номер телефона" [textMask]="{mask: mask}" [(ngModel)]="telNumber">
   </div>
   <div class="kmp__input">
     <input type="text" placeholder="Ваше имя">

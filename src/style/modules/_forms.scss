@@ -1,0 +1,22 @@
+.kmp {
+    &__input {
+        margin-bottom: 1rem;
+        input {
+            font-family: 'San Francisco', sans-serif;
+            font-size: 1.4rem;
+            line-height: 2;
+            text-align: center;
+            width: 100%;
+            border-top: none;
+            border-right: none;
+            border-left: none;
+            border-bottom: 1px solid #1a191b;
+            outline: none;
+            border-radius: 0;
+
+            @include placeholder {
+                color: #ccc;
+            }
+        }
+    }
+}
