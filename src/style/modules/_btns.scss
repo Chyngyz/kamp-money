@@ -33,4 +33,43 @@
             color: #2196f3;
         }
     }
+
+    &__history-btn, &__settings-btn {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        border: 1px solid #cbd4da;
+        border-radius: 50%;
+        display: inline-block;
+        vertical-align: middle;
+        background: #fff;
+
+        img {
+            width: 65%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            @include transform(translate(-50%, -50%));
+        }
+    }
+
+    &__refresh-btn {
+        position: relative;
+        width: 60px;
+        height: 60px;
+        border: 1px solid #cbd4da;
+        border-radius: 50%;
+        display: inline-block;
+        vertical-align: middle;
+        background: #fff;
+        margin: 0 15px;
+
+        img {
+            width: 65%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            @include transform(translate(-50%, -50%));
+        }
+    }
 }

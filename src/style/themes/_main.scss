@@ -1,0 +1,70 @@
+.kmp__main {
+    &__header {
+        position: relative;
+        height: 135px;
+        padding: 20px 5px;
+    }
+
+    &__l {
+        float: left;
+        width: 80px;
+        text-align: center;
+    }
+
+    &__r {
+        float: right;
+        width: 90px;
+        text-align: center;
+    }
+
+    &__c {
+        position: absolute;
+        left: 50%;
+        @include transform(translateX(-50%));
+        text-align: center;
+    }
+
+    &__body {
+        border-top: 1px solid #cbd4da;
+        position: relative;
+    }
+
+    &__icons {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        @include transform(translate(-50%, -50%));
+    }
+}
+
+.kmp__qr-icon {
+    height: 30px;
+    margin-top: 10px;
+}
+
+.kmp__bcard-icon {
+    height: 30px;
+    margin-top: 10px;
+}
+
+.kmp__icon-title {
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+.kmp__balance {
+    font-size: 36px;
+    color: #2196f3;
+}
+
+.kmp__currency-title {
+    font-size: 20px;
+    color: #2196f3;
+}
+
+.kmp__balance-pay {
+    font-size: 14px;
+    width: 80px;
+    margin: 0 auto;
+    color: #2196f3;
+}
