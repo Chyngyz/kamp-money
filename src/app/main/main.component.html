@@ -1,14 +1,14 @@
 <div class="kmp__main">
     <div class="kmp__main__header">
-        <div class="kmp__main__l">
+        <div class="kmp__main__l" [routerLink]="['/payment-form']">
             <img class="kmp__qr-icon" src="/img/qr.svg" alt="">
             <div class="kmp__icon-title">Быстрая оплата</div>
         </div>
         <div class="kmp__main__c">
-            <div class="kmp__balance">1200<span class="kmp__currency-title">c</span></div>
-            <div class="kmp__balance-pay">Пополнить баланс</div>
+            <div [routerLink]="['/add-money']" class="kmp__balance">1200<span class="kmp__currency-title">c</span></div>
+            <div [routerLink]="['/add-money']" class="kmp__balance-pay">Пополнить баланс</div>
         </div>
-        <div class="kmp__main__r">
+        <div class="kmp__main__r" [routerLink]="['/add-money']">
             <img class="kmp__bcard-icon" src="/img/creditCard.svg" alt="">
             <div class="kmp__icon-title">Банковские карты</div>
         </div>
@@ -21,8 +21,95 @@
             <div class="kmp__refresh-btn">
                 <img src="/img/refresh.svg" alt="">
             </div>
-            <div class="kmp__settings-btn">
+            <div [routerLink]="['/settings-main']" class="kmp__settings-btn">
                 <img src="/img/settings.svg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="kmp__main__featured">
+        <div class="kmp__featured__title">Избранные</div>
+        <div class="kmp__featured__items">
+            <div [routerLink]="['/payment-form']" class="kmp__service__item">
+                <div class="kmp__service__icon">
+                    <img src="/img/megacom.png" alt="">
+                </div>
+                <div class="kmp__service__title">Мегаком</div>
+            </div>
+            <div [routerLink]="['/payment-form']" class="kmp__service__item">
+                <div class="kmp__service__icon">
+                    <img src="/img/aknet.png" alt="">
+                </div>
+                <div class="kmp__service__title">Акнет</div>
+            </div>
+            <div [routerLink]="['/payment-form']" class="kmp__service__item">
+                <div class="kmp__service__icon">
+                    <img src="/img/beeline.png" alt="">
+                </div>
+                <div class="kmp__service__title">Билайн</div>
+            </div>
+            <div [routerLink]="['/payment-form']" class="kmp__service__item">
+                <div class="kmp__service__icon">
+                    <img src="/img/o.png" alt="">
+                </div>
+                <div class="kmp__service__title">О!</div>
+            </div>
+            <div [routerLink]="['/payment-form']" class="kmp__service__item kmp__service__item--new">
+                <div class="kmp__service__icon">
+                    <img src="/img/plus.png" alt="">
+                </div>
+                <div class="kmp__service__title">Добавить</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="kmp__main__services">
+        <div class="kmp__main__icons">
+            <div class="kmp__search-btn">
+                <img src="/img/search.svg" alt="">
+            </div>
+        </div>
+        <div class="kmp__service__items">
+            <div class="kmp__service__item">
+                <div class="kmp__service__icon">
+                    <img src="/img/megacom.png" alt="">
+                </div>
+                <div class="kmp__service__title">Мегаком</div>
+            </div>
+            <div class="kmp__service__item">
+                <div class="kmp__service__icon">
+                    <img src="/img/aknet.png" alt="">
+                </div>
+                <div class="kmp__service__title">Акнет</div>
+            </div>
+            <div class="kmp__service__item">
+                <div class="kmp__service__icon">
+                    <img src="/img/beeline.png" alt="">
+                </div>
+                <div class="kmp__service__title">Билайн</div>
+            </div>
+            <div class="kmp__service__item">
+                <div class="kmp__service__icon">
+                    <img src="/img/o.png" alt="">
+                </div>
+                <div class="kmp__service__title">О!</div>
+            </div>
+            <div class="kmp__service__item">
+                <div class="kmp__service__icon">
+                    <img src="/img/aknet.png" alt="">
+                </div>
+                <div class="kmp__service__title">Акнет</div>
+            </div>
+            <div class="kmp__service__item">
+                <div class="kmp__service__icon">
+                    <img src="/img/beeline.png" alt="">
+                </div>
+                <div class="kmp__service__title">Билайн</div>
+            </div>
+            <div class="kmp__service__item">
+                <div class="kmp__service__icon">
+                    <img src="/img/o.png" alt="">
+                </div>
+                <div class="kmp__service__title">О!</div>
             </div>
         </div>
     </div>

@@ -9,6 +9,13 @@ import { HomeComponent } from './home/home.component';
 import { SigninComponent } from './signin/signin.component';
 import { CreateComponent } from './create/create.component';
 import { MainComponent } from './main/main.component';
+import { PaymentFormComponent } from './payment-form/payment-form.component';
+import { PaymentConfirmComponent } from './payment-confirm/payment-confirm.component';
+import { SettingsMainComponent } from './settings-main/settings-main.component';
+import { SettingsEditComponent } from './settings-edit/settings-edit.component';
+import { AddMoneyMainComponent } from './add-money-main/add-money-main.component';
+import { AddMoneyBankComponent } from './add-money-bank/add-money-bank.component';
+
 import { ApiService } from './shared';
 import { routing } from './app.routing';
 
@@ -32,11 +39,16 @@ import {
     HomeComponent,
     SigninComponent,
     CreateComponent,
-    MainComponent
+    MainComponent,
+    PaymentFormComponent,
+    PaymentConfirmComponent,
+    SettingsEditComponent,
+    SettingsMainComponent,
+    AddMoneyMainComponent,
+    AddMoneyBankComponent
   ],
   providers: [
-    ApiService,
-    {provide: LocationStrategy, useClass: HashLocationStrategy}
+    ApiService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,48 @@
+.kmp__settings {
+
+    &__list {
+        margin: 0;
+        padding: 0;
+
+        li {
+            &:first-child {
+                .kmp__settings__item {
+                    border-top: 1px solid #cbd4da;
+                }
+            }
+        }
+    }
+
+    &__item {
+        display: block;
+        font-size: 18px;
+        border-bottom: 1px solid #cbd4da;
+        padding: 16px;
+        position: relative;
+        color: #000;
+        text-decoration: none;
+
+        &--arrow {
+            &:after {
+                content: '';
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                border-top: 1px solid #333;
+                border-right: 1px solid #333;
+                right: 20px;
+                top: 50%;
+                @include transform(rotate(45deg) translateY(-50%));
+            }
+        }
+
+        &--red {
+            color: #ff0000;
+
+            &:after {
+                display: none;
+            }
+        }
+
+    }
+}

@@ -1,0 +1,36 @@
+.kmp__payment {
+    border-top: 1px solid #cbd4da;
+    padding: 30px 10px;
+    margin-top: 30px;
+
+    &__form {
+        padding: 30px 40px;
+        text-align: center;
+    }
+
+    &__remainder {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        color: #9fb7bf;
+        margin-top: 2rem;
+    }
+
+    &__label {
+        color: #9fb7bf;
+        font-size: 18px;
+    }
+
+    &__value {
+        text-align: right;
+        font-size: 18px;
+    }
+
+    &__form-group {
+        padding: 10px 0;
+        border-top: 1px solid #cbd4da;
+
+        &:first-child {
+            border-top: none;
+        }
+    }
+}
