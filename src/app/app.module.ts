@@ -21,11 +21,6 @@ import { routing } from './app.routing';
 
 import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
 
-import {
-  LocationStrategy,
-  HashLocationStrategy
-} from '@angular/common';
-
 @NgModule({
   imports: [
     BrowserModule,
