@@ -4,15 +4,14 @@
         text-align: center;
 
         &__img {
-            width: 155px;
+            width: 250px;
             height: 155px;
-            margin-bottom: 0.6rem;
         }
 
         &--sm {
             .kmp__logo__img {
-                width: 90px;
-                height: 90px;
+                width: 155px;
+                height: auto;
             }
         }
 
