@@ -19,6 +19,8 @@ import { AddMoneyBankComponent } from './add-money-bank/add-money-bank.component
 import { ApiService } from './shared';
 import { routing } from './app.routing';
 
+import { TabComponent, TabsComponent } from './ui-components';
+
 import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
 
 @NgModule({
@@ -40,7 +42,10 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
     SettingsEditComponent,
     SettingsMainComponent,
     AddMoneyMainComponent,
-    AddMoneyBankComponent
+    AddMoneyBankComponent,
+    // UI-components
+    TabComponent,
+    TabsComponent
   ],
   providers: [
     ApiService
