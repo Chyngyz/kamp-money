@@ -1,0 +1,13 @@
+.text {
+    &-center {
+        text-align: center;
+    }
+
+    &-red {
+        color: #ff0000;
+    }
+
+    &-warning {
+        font-size: 0.75rem;
+    }
+}

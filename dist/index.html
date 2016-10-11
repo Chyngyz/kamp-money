@@ -28,8 +28,62 @@
     <meta name="theme-color" content="#ffffff">
 
     <base href="/">
-  <link href="/css/app.38cb0b708401fc8877ae.css" rel="stylesheet"></head>
+  <link href="/css/app.14291c1c0c66bb8d93a2.css" rel="stylesheet"></head>
   <body>
-    <kmp-app>Loading...</kmp-app>
-  <script type="text/javascript" src="/js/polyfills.38cb0b708401fc8877ae.js"></script><script type="text/javascript" src="/js/vendor.38cb0b708401fc8877ae.js"></script><script type="text/javascript" src="/js/app.38cb0b708401fc8877ae.js"></script></body>
+    <kmp-app></kmp-app>
+
+    <!-- Pre-Bootstrap Loader Screen -->
+    <div id="pre-bootstrap-container">
+
+      <script type="text/javascript">
+        document.addEventListener("appready", handleAppReady);
+        function handleAppReady(event) {
+          var preBootstrapContainer = document.getElementById("pre-bootstrap-container");
+          var preBootstrap = document.getElementById("pre-bootstrap");
+          preBootstrap.className = "loaded";
+          setTimeout(
+            function removeLoadingScreen() {
+              preBootstrapContainer
+                .parentNode
+                .removeChild(preBootstrapContainer);
+            },
+            300
+          );
+        }
+      </script>
+
+      <style type="text/css">
+        #pre-bootstrap {
+          background-color: #fff;
+          bottom: 0px;
+          left: 0px;
+          opacity: 1.0;
+          position: fixed;
+          right: 0px;
+          top: 0px;
+          transition: all linear 300ms;
+          -webkit-transition: all linear 300ms;
+          z-index: 999999;
+        }
+        
+        #pre-bootstrap.loaded {
+          opacity: 0.0;
+        }
+        
+        #pre-bootstrap .preloader {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) scale(0.5);
+          -webkit-transform: translate(-50%, -50%) scale(0.5);
+          -moz-transform: translate(-50%, -50%) scale(0.5);
+        }
+      </style>
+
+      <div id="pre-bootstrap">
+        <img class="preloader" src="/img/preloader.gif" alt="">
+      </div>
+    </div>
+
+  <script type="text/javascript" src="/js/polyfills.14291c1c0c66bb8d93a2.js"></script><script type="text/javascript" src="/js/vendor.14291c1c0c66bb8d93a2.js"></script><script type="text/javascript" src="/js/app.14291c1c0c66bb8d93a2.js"></script></body>
 </html>

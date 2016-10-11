@@ -1,3 +1,18 @@
 <main [ngStyle]="{'min-height.px': viewportHeight}">
     <router-outlet></router-outlet>
 </main>
+
+<ngl-modal [(open)]="opened" [directional]="directional">
+  <div body>
+      <div [ngSwitch]="modalTriggerMessage">
+          <div *ngSwitchCase="'wrong number'">
+              <kmp-cross></kmp-cross>
+              <h2 class="text-center">Введён неправильный номер, пожалуйста введите номер еще раз.</h2>
+          </div>
+          <div *ngSwitchCase="'customer exist'">
+              <kmp-cross></kmp-cross>
+              <h2 class="text-center">Пользователь с таким номером уже существует, пожалуйста введите другой номер.</h2>
+          </div>
+      </div>
+  </div>
+</ngl-modal>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ApiService } from '../shared/api.service';
+import { ApiService, ModalViewService } from '../shared';
 
 @Component({
   selector: 'kmp-create',
@@ -12,11 +12,12 @@ export class CreateComponent implements OnInit {
   public data: any = {};
   public mask = ['9', '9', '6', ' ', '(', /[0-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, ' ', /\d/, /\d/, ' ', /\d/, /\d/];
 
-  public telValid: boolean;
-  public nameValid: boolean;
+  public telValid: boolean = true;
+  public nameValid: boolean = true;
 
   constructor(
     private apiService: ApiService,
+    private modalViewService: ModalViewService,
     private route: ActivatedRoute,
     private router: Router) { }
 
@@ -41,10 +42,14 @@ export class CreateComponent implements OnInit {
           if (resp.submission_status && resp.submission_status == 'success') {
             this.router.navigate(['/main']);
           } else if (resp.status && resp.status == 'Wrong number format') {
-            // Здесь будет вызов error handler
+            this.modalViewService.announceModalView('wrong number');
+            this.telNumber = '';
+            this.telValid = true;
+            this.nameValid = true;
             console.log("Wrong number format");
           } else if (resp.status && resp.status == 'Customer already exist, token update') {
-            // Здесь будет вызов error handler
+            this.modalViewService.announceModalView('customer exist');
+            this.telNumber = '';
             console.log('Customer already exist, token update');
           }
         },

@@ -5,13 +5,12 @@
 <div class="kmp__signin">
   <div class="kmp__input">
     <input type="tel" placeholder="Ваш номер телефона" [textMask]="{mask: mask}" [(ngModel)]="telNumber">
+    <p class="text-red text-warning" *ngIf="!telValid">Пожалуйста, введите правильный номер.</p>
   </div>
   <div class="kmp__input">
     <input type="text" [(ngModel)]="username" placeholder="Ваше имя">
+    <p class="text-red text-warning" *ngIf="!nameValid">Имя должно быть больше 3 символов.</p>
   </div>
-  <ngl-icon icon="connected_apps" type="default"></ngl-icon>
-  <ngl-icon icon="warning" type="warning" alt="Warning"></ngl-icon>
-  <ngl-icon icon="close" type="error"></ngl-icon>
 
   <div class="kmp__signin__licence">
       <p>Нажимая «Создать кошелек», я принимаю <a href="#">Условия пользовательского соглашения</a></p>
