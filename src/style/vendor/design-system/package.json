@@ -1,0 +1,71 @@
+{
+  "_args": [
+    [
+      "@salesforce-ux/design-system",
+      "/home/chyngyz/workspace/kamp-money"
+    ]
+  ],
+  "_from": "@salesforce-ux/design-system@latest",
+  "_id": "@salesforce-ux/design-system@2.1.3",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/@salesforce-ux/design-system",
+  "_nodeVersion": "6.6.0",
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/design-system-2.1.3.tgz_1475270078114_0.7868715689983219"
+  },
+  "_npmUser": {
+    "email": "salesforce-ux-npm@salesforce.com",
+    "name": "salesforce-ux"
+  },
+  "_npmVersion": "3.10.8",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "@salesforce-ux/design-system",
+    "raw": "@salesforce-ux/design-system",
+    "rawSpec": "",
+    "scope": "@salesforce-ux",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@salesforce-ux/design-system/-/design-system-2.1.3.tgz",
+  "_shasum": "4a77bc15d3d0aea558fa27d9d8b0e9570b584633",
+  "_shrinkwrap": null,
+  "_spec": "@salesforce-ux/design-system",
+  "_where": "/home/chyngyz/workspace/kamp-money",
+  "author": {
+    "name": "Salesforce"
+  },
+  "bugs": {
+    "url": "https://github.com/salesforce-ux/design-system/issues"
+  },
+  "dependencies": {},
+  "description": "Salesforce Lightning Design System",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "4a77bc15d3d0aea558fa27d9d8b0e9570b584633",
+    "tarball": "https://registry.npmjs.org/@salesforce-ux/design-system/-/design-system-2.1.3.tgz"
+  },
+  "homepage": "https://github.com/salesforce-ux/design-system#readme",
+  "license": "SEE LICENSE IN README.md",
+  "maintainers": [
+    {
+      "email": "adam.putinski+salesforce-ux@salesforce.com",
+      "name": "salesforce-ux"
+    }
+  ],
+  "name": "@salesforce-ux/design-system",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/salesforce-ux/design-system.git"
+  },
+  "scripts": {},
+  "version": "2.1.3"
+}
