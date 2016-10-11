@@ -13,12 +13,13 @@ export class ApiService {
   constructor(private _http: Http) {}
 
   registration(data): Observable < any > {
+    console.log(JSON.stringify(data));
 
-        return this._http.post(this.apiRegUrl, JSON.stringify(data), {
-                headers: this.getHeaders()
-            })
-            .map(this.extractData)
-            .catch(this.handleError);
+    return this._http.post(this.apiRegUrl, JSON.stringify(data), {
+            headers: this.getHeaders()
+        })
+        .map(this.extractData)
+        .catch(this.handleError);
   }
 
   getAppId() {
@@ -31,7 +32,7 @@ export class ApiService {
 
   private getHeaders() {
     let headers = new Headers();
-    headers.append('Accept', 'application/json');
+    headers.append('Content-type', 'application/json');
     return headers;
   }
 
