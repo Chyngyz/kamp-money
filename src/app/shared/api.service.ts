@@ -9,12 +9,21 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class ApiService {
   private apiRegUrl = `${AppSettings.API_ENDPOINT}/registration`;
+  private apiUserDetailsUrl = `${AppSettings.API_ENDPOINT}/customer_detail_info`;
 
   constructor(private _http: Http) {}
 
   registration(data): Observable < any > {
     console.log(JSON.stringify(data));
 
+    return this._http.post(this.apiRegUrl, JSON.stringify(data), {
+            headers: this.getHeaders()
+        })
+        .map(this.extractData)
+        .catch(this.handleError);
+  }
+
+  getUserDetails(data) {
     return this._http.post(this.apiRegUrl, JSON.stringify(data), {
             headers: this.getHeaders()
         })

@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
     templateUrl: 'settings-edit.component.html'
 })
 export class SettingsEditComponent implements OnInit {
+    days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
     constructor() { }
 
     ngOnInit() { }
