@@ -9,7 +9,15 @@
   <div class="kmp__btn kmp__btn--rounded kmp__btn--outline" [routerLink]="['/create']">Создать кошелек с Kamp</div>
 </div>
 
+<ngl-form-checkbox label="Required" style="display: inline-block;">
+  <input nglFormControl type="checkbox" [(ngModel)]="required" />
+</ngl-form-checkbox>
+<ngl-form-checkbox label="Error" style="display: inline-block;">
+  <input nglFormControl type="checkbox" [(ngModel)]="hasError" />
+</ngl-form-checkbox>
 
-<!--<ngl-form-checkbox label="Checkbox Label">
-  <input nglFormControl type="checkbox" />
-</ngl-form-element>-->
+
+<fieldset ngl-form-group label="Radio Group Label" [required]="required" [error]="hasError ? error : null" class="slds-m-top--small">
+  <ngl-form-group-element label="Radio Label One"><input nglFormControl type="radio" /></ngl-form-group-element>
+  <ngl-form-group-element label="Radio Label Two"><input nglFormControl type="radio" /></ngl-form-group-element>
+</fieldset>

@@ -2,8 +2,8 @@ import { NgModule, ApplicationRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
-// import { NglModule } from 'ng-lightning/ng-lightning';
-import MaskedInput from 'angular2-text-mask';
+import { NglModule } from 'ng-lightning/ng-lightning';
+import { TextMaskModule } from 'angular2-text-mask';
 
 
 import { AppComponent } from './app.component';
@@ -31,12 +31,12 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
     HttpModule,
     FormsModule,
     routing,
-    // NglModule.forRoot({
-    //   svgPath: '/icons'
-    // })
+    TextMaskModule,
+    NglModule.forRoot({
+      svgPath: '/icons'
+    })
   ],
   declarations: [
-    MaskedInput,
     AppComponent,
     HomeComponent,
     SigninComponent,
