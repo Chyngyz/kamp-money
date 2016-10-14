@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { ApiService, ModalViewService } from '../shared';
+import { Router } from '@angular/router';
+import { ApiService, ModalViewService, LocalStorageService } from '../shared';
 
 @Component({
   selector: 'kmp-create',
@@ -18,8 +18,8 @@ export class CreateComponent implements OnInit {
   constructor(
     private apiService: ApiService,
     private modalViewService: ModalViewService,
-    private route: ActivatedRoute,
-    private router: Router) { }
+    private router: Router,
+    private localStorageService: LocalStorageService) { }
 
   ngOnInit() { }
 
@@ -49,6 +49,7 @@ export class CreateComponent implements OnInit {
             this.nameValid = true;
             console.log("Wrong number format");
           } else if (resp.submission_status && resp.submission_status == 'success') {
+            this.localStorageService.setObject('user',this.data);
             this.router.navigate(['/main']);
           }
         },

@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterContentChecked } from '@angular/core';
-
-import { ApiService, AppReadyEvent, ModalViewService } from './shared';
+import { Router } from '@angular/router';
+import { ApiService, AppReadyEvent, ModalViewService, LocalStorageService } from './shared';
 
 import '../style/app.scss';
 
@@ -23,7 +23,9 @@ export class AppComponent implements OnInit, AfterContentChecked {
   constructor(
     private api: ApiService,
     private appReadyEvent: AppReadyEvent,
-    private modalViewService: ModalViewService) { }
+    private modalViewService: ModalViewService,
+    private router: Router,
+    private localStorageService: LocalStorageService) { }
 
   ngOnInit() {
     this.viewportHeight = window.innerHeight;
@@ -31,7 +33,12 @@ export class AppComponent implements OnInit, AfterContentChecked {
     this.modalViewService.modalView$.subscribe(message => {
       this.modalTriggerMessage = message;
       this.open();
-    })
+    });
+
+    let userData = this.localStorageService.getObject('user');
+    if(userData !== undefined) {
+      this.router.navigate(['/main']);
+    }
   }
 
   ngAfterContentChecked() {

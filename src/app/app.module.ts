@@ -18,7 +18,7 @@ import { SettingsEditComponent } from './settings-edit/settings-edit.component';
 import { AddMoneyMainComponent } from './add-money-main/add-money-main.component';
 import { AddMoneyBankComponent } from './add-money-bank/add-money-bank.component';
 
-import { ApiService, AppReadyEvent, ModalViewService } from './shared';
+import { ApiService, AppReadyEvent, ModalViewService, LocalStorageService } from './shared';
 import { routing } from './app.routing';
 
 import { TabComponent, TabsComponent, CrossIconComponent } from './ui-components';
@@ -56,7 +56,8 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
   providers: [
     ApiService,
     AppReadyEvent,
-    ModalViewService
+    ModalViewService,
+    LocalStorageService
   ],
   bootstrap: [AppComponent]
 })
