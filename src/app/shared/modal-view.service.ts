@@ -7,7 +7,7 @@ export class ModalViewService {
 
     modalView$ = this.modalViewSource.asObservable();
 
-    announceModalView(message: string) {
+    announceModalView(message: any) {
         this.modalViewSource.next(message);
     }
 }

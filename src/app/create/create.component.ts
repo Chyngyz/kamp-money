@@ -39,18 +39,17 @@ export class CreateComponent implements OnInit {
 
       this.apiService.registration(this.data).subscribe(
         resp => {
-          if (resp.submission_status && resp.submission_status == 'success') {
-            this.router.navigate(['/main']);
-          } else if (resp.status && resp.status == 'Wrong number format') {
-            this.modalViewService.announceModalView('wrong number');
+          if (resp.submission_status && resp.submission_status == 'success' && resp.message_code == 7000) {
+            this.modalViewService.announceModalView(7000);
+            this.telNumber = '';
+          } else if (resp.submission_status && resp.submission_status == 'error' && resp.error_code == 3809) {
+            this.modalViewService.announceModalView(3809);
             this.telNumber = '';
             this.telValid = true;
             this.nameValid = true;
             console.log("Wrong number format");
-          } else if (resp.status && resp.status == 'Customer already exist, token update') {
-            this.modalViewService.announceModalView('customer exist');
-            this.telNumber = '';
-            console.log('Customer already exist, token update');
+          } else if (resp.submission_status && resp.submission_status == 'success') {
+            this.router.navigate(['/main']);
           }
         },
         error => console.log(error)

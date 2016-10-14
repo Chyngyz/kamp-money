@@ -5,7 +5,7 @@
                 <div class="kmp__form__label">Имя</div>
             </div>
             <div class="col-8-sm">
-                <input type="text" class="kmp__form__input" placeholder="Имя">
+                <input type="text" class="kmp__form__input" placeholder="Имя" [(ngModel)]="formModel.first_name">
             </div>
         </div>
     </div>
@@ -15,7 +15,7 @@
                 <div class="kmp__form__label">Фамилия</div>
             </div>
             <div class="col-8-sm">
-                <input type="text" class="kmp__form__input" placeholder="Фамилия">
+                <input type="text" class="kmp__form__input" placeholder="Фамилия" [(ngModel)]="formModel.last_name">
             </div>
         </div>
     </div>
@@ -25,7 +25,7 @@
                 <div class="kmp__form__label">Отчество</div>
             </div>
             <div class="col-8-sm">
-                <input type="text" class="kmp__form__input" placeholder="Отчество">
+                <input type="text" class="kmp__form__input" placeholder="Отчество" [(ngModel)]="formModel.middle_name">
             </div>
         </div>
     </div>
@@ -35,7 +35,7 @@
                 <div class="kmp__form__label">ИНН</div>
             </div>
             <div class="col-8-sm">
-                <input type="text" class="kmp__form__input" placeholder="ИНН">
+                <input type="text" class="kmp__form__input" placeholder="ИНН" [(ngModel)]="formModel.identification_number">
             </div>
         </div>
     </div>
@@ -44,34 +44,39 @@
             <div class="col-4-sm">
                 <div class="kmp__form__label">Пол</div>
             </div>
-            <ngl-icon icon="answer_public" category="standard"></ngl-icon>
             <div class="col-8-sm">
-                <!--<fieldset ngl-form-group label="Пол" [required]="required" [error]="hasError ? error : null" class="slds-m-top--small">
-                    <ngl-form-group-element label="Мужчина"><input nglFormControl type="radio" /></ngl-form-group-element>
-                    <ngl-form-group-element label="Женщина"><input nglFormControl type="radio" /></ngl-form-group-element>
-                </fieldset>
-                <fieldset ngl-form-group-alt [required]="required" [error]="hasError ? error : null" class="slds-m-top--small">
-                    <template nglFormLabel><i>Alternate Radio Group</i></template>
-                    <ngl-form-group-element *ngFor="let day of days">
-                        <template nglFormLabel>{{day}}</template>
-                        <input nglFormControl type="radio" />
-                    </ngl-form-group-element>
-                </fieldset>-->
+                <span class="slds-radio">
+                    <input type="radio" id="radio-306" name="options" [(ngModel)]="formModel.gender" value="male" [checked]="formModel.gender=='male'" />
+                    <label class="slds-radio__label" for="radio-306">
+                        <span class="slds-radio--faux"></span>
+                        <span class="slds-form-element__label">Мужчина</span>
+                    </label>
+                </span>
+                <span class="slds-radio">
+                    <input type="radio" id="radio-307" name="options" [(ngModel)]="formModel.gender" value="female" [checked]="formModel.gender=='female'" />
+                    <label class="slds-radio__label" for="radio-307">
+                        <span class="slds-radio--faux"></span>
+                        <span class="slds-form-element__label">Женщина</span>
+                    </label>
+                </span>
             </div>
         </div>
     </div>
-    <div class="kmp__form__divider">
-        Безопасность
+    <div class="kmp__form__item">
+        <div class="row">
+            <div class="col-4-sm">
+                <div class="kmp__form__label">Адрес</div>
+            </div>
+            <div class="col-8-sm">
+                <div class="slds-form-element">
+                    <div class="slds-form-element__control">
+                        <textarea id="textarea-input-01" class="slds-textarea" [(ngModel)]="formModel.address" placeholder="Ваш адрес"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <ul class="kmp__settings__list">
-        <li>
-            <a class="kmp__settings__item">Изменить пароль</a>
-        </li>
-        <li>
-            <a class="kmp__settings__item">Пройти идентификацию</a>
-        </li>
-    </ul>
 </div>
 
 
-<div class="kmp__btn kmp__btn--sticky kmp__btn--primary">Сохранить</div>
+<div class="kmp__btn kmp__btn--sticky kmp__btn--primary" (click)="saveUserData(formModel)">Сохранить</div>

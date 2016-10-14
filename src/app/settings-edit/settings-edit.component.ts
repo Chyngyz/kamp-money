@@ -5,8 +5,19 @@ import { Component, OnInit } from '@angular/core';
     templateUrl: 'settings-edit.component.html'
 })
 export class SettingsEditComponent implements OnInit {
-    days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
+    public formModel: Object = {
+        first_name: '',
+        last_name: '',
+        middle_name: '',
+        identification_number: '',
+        gender: 'male',
+        address: ''
+    };
     constructor() { }
 
     ngOnInit() { }
+
+    saveUserData(obj) {
+        console.log(obj);
+    }
 }
