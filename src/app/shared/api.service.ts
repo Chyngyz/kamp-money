@@ -9,8 +9,11 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class ApiService {
   private apiRegUrl = `${AppSettings.API_ENDPOINT}/registration`;
-  private apiUserDetailsUrl = `${AppSettings.API_ENDPOINT}/customer_detail_info`;
+  private apiUserDetailsUrl = `${AppSettings.API_ENDPOINT}/kamp_customer_details/customer_detail_info`;
   private apiUserBalanceUrl = `${AppSettings.API_ENDPOINT}/kamp_customer_details/customer_balance`;
+  private apiUserDatailsUpdateUrl = `${AppSettings.API_ENDPOINT}/kamp_customer_details/create_update_detail`;
+  private apiUserDatailsConfirmUrl = `${AppSettings.API_ENDPOINT}/kamp_customer_details/accept_detail`;
+  
 
   constructor(private _http: Http) {}
 
@@ -25,7 +28,15 @@ export class ApiService {
   }
 
   getUserDetails(data) {
-    return this._http.post(this.apiRegUrl, JSON.stringify(data), {
+    return this._http.post(this.apiUserDetailsUrl, JSON.stringify(data), {
+            headers: this.getHeaders()
+        })
+        .map(this.extractData)
+        .catch(this.handleError);
+  }
+
+  confirmUserDetails(data) {
+    return this._http.post(this.apiUserDatailsConfirmUrl, JSON.stringify(data), {
             headers: this.getHeaders()
         })
         .map(this.extractData)
@@ -38,6 +49,14 @@ export class ApiService {
 
   getUserBalance(data) {
     return this._http.post(this.apiUserBalanceUrl, JSON.stringify(data), {
+            headers: this.getHeaders()
+        })
+        .map(this.extractData)
+        .catch(this.handleError);
+  }
+
+  updateUserDetails(data) {
+    return this._http.post(this.apiUserDatailsUpdateUrl, JSON.stringify(data), {
             headers: this.getHeaders()
         })
         .map(this.extractData)

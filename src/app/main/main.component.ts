@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { ApiService, LocalStorageService } from '../shared';
@@ -7,8 +7,9 @@ import { ApiService, LocalStorageService } from '../shared';
     selector: 'kmp-main',
     templateUrl: 'main.component.html'
 })
-export class MainComponent implements OnInit {
+export class MainComponent implements OnInit, OnDestroy {
     public balance: number;
+    private getUserDataSubscription: any;
 
     constructor(
         private apiService: ApiService,
@@ -25,11 +26,15 @@ export class MainComponent implements OnInit {
         }
     }
 
+    ngOnDestroy() {
+        this.getUserDataSubscription.unsubscribe();
+    }
+
     getUserBalance(userData?) {
         if(!userData) {
             userData = this.localStorageService.getObject('user');
         }
-        this.apiService.getUserBalance(userData).subscribe(
+        this.getUserDataSubscription = this.apiService.getUserBalance(userData).subscribe(
             resp => {
                 console.log(resp);
                 this.balance = resp.customer_balance;

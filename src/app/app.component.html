@@ -9,9 +9,17 @@
               <kmp-cross></kmp-cross>
               <h2 class="text-center">Введён неправильный номер, пожалуйста введите номер еще раз.</h2>
           </div>
+          <div *ngSwitchCase="3908">
+              <kmp-cross></kmp-cross>
+              <h2 class="text-center">Неправильный секретный код, пожалуйста попробуйте еще раз.</h2>
+          </div>
           <div *ngSwitchCase="7000">
               <kmp-cross></kmp-cross>
               <h2 class="text-center">Пользователь с таким номером уже существует, пожалуйста введите другой номер.</h2>
+          </div>
+          <div *ngSwitchCase="7001">
+              <kmp-cross></kmp-cross>
+              <h2 class="text-center">Поздравляем! Вы успешно идентифицировались в банке.</h2>
           </div>
       </div>
   </div>

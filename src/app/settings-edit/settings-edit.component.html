@@ -5,7 +5,12 @@
                 <div class="kmp__form__label">Имя</div>
             </div>
             <div class="col-8-sm">
-                <input type="text" class="kmp__form__input" placeholder="Имя" [(ngModel)]="formModel.first_name">
+                <div *ngIf="userStatus === 'notid_editable'">
+                    <input type="text" class="kmp__form__input" placeholder="Имя" [(ngModel)]="formModel.first_name">
+                </div>
+                <div *ngIf="userStatus === 'waitingconfirm_noteditable' || userStatus === 'id_noteditable' || userStatus === 'waitingconfirmbank_noteditable'">
+                    {{formModel.first_name}}
+                </div>
             </div>
         </div>
     </div>
@@ -15,7 +20,12 @@
                 <div class="kmp__form__label">Фамилия</div>
             </div>
             <div class="col-8-sm">
-                <input type="text" class="kmp__form__input" placeholder="Фамилия" [(ngModel)]="formModel.last_name">
+                <div *ngIf="userStatus === 'notid_editable'">
+                    <input type="text" class="kmp__form__input" placeholder="Фамилия" [(ngModel)]="formModel.last_name">
+                </div>
+                <div *ngIf="userStatus === 'waitingconfirm_noteditable' || userStatus === 'id_noteditable' || userStatus === 'waitingconfirmbank_noteditable'">
+                    {{formModel.last_name}}
+                </div>
             </div>
         </div>
     </div>
@@ -25,7 +35,12 @@
                 <div class="kmp__form__label">Отчество</div>
             </div>
             <div class="col-8-sm">
-                <input type="text" class="kmp__form__input" placeholder="Отчество" [(ngModel)]="formModel.middle_name">
+                <div *ngIf="userStatus === 'notid_editable'">
+                    <input type="text" class="kmp__form__input" placeholder="Отчество" [(ngModel)]="formModel.middle_name">
+                </div>
+                <div *ngIf="userStatus === 'waitingconfirm_noteditable' || userStatus === 'id_noteditable' || userStatus === 'waitingconfirmbank_noteditable'">
+                    {{formModel.middle_name}}
+                </div>
             </div>
         </div>
     </div>
@@ -35,7 +50,12 @@
                 <div class="kmp__form__label">ИНН</div>
             </div>
             <div class="col-8-sm">
-                <input type="text" class="kmp__form__input" placeholder="ИНН" [(ngModel)]="formModel.identification_number">
+                <div *ngIf="userStatus === 'notid_editable'">
+                    <input type="text" class="kmp__form__input" placeholder="ИНН" [(ngModel)]="formModel.identification_number">
+                </div>
+                <div *ngIf="userStatus === 'waitingconfirm_noteditable' || userStatus === 'id_noteditable' || userStatus === 'waitingconfirmbank_noteditable'">
+                    {{formModel.identification_number}}
+                </div>
             </div>
         </div>
     </div>
@@ -45,20 +65,25 @@
                 <div class="kmp__form__label">Пол</div>
             </div>
             <div class="col-8-sm">
-                <span class="slds-radio">
-                    <input type="radio" id="radio-306" name="options" [(ngModel)]="formModel.gender" value="male" [checked]="formModel.gender=='male'" />
-                    <label class="slds-radio__label" for="radio-306">
-                        <span class="slds-radio--faux"></span>
-                        <span class="slds-form-element__label">Мужчина</span>
-                    </label>
-                </span>
-                <span class="slds-radio">
-                    <input type="radio" id="radio-307" name="options" [(ngModel)]="formModel.gender" value="female" [checked]="formModel.gender=='female'" />
-                    <label class="slds-radio__label" for="radio-307">
-                        <span class="slds-radio--faux"></span>
-                        <span class="slds-form-element__label">Женщина</span>
-                    </label>
-                </span>
+                <div *ngIf="userStatus === 'notid_editable'">
+                    <span class="slds-radio">
+                        <input type="radio" id="radio-306" name="options" [(ngModel)]="formModel.gender" value="male" [checked]="formModel.gender=='male'" />
+                        <label class="slds-radio__label" for="radio-306">
+                            <span class="slds-radio--faux"></span>
+                            <span class="slds-form-element__label">Мужчина</span>
+                        </label>
+                    </span>
+                    <span class="slds-radio">
+                        <input type="radio" id="radio-307" name="options" [(ngModel)]="formModel.gender" value="female" [checked]="formModel.gender=='female'" />
+                        <label class="slds-radio__label" for="radio-307">
+                            <span class="slds-radio--faux"></span>
+                            <span class="slds-form-element__label">Женщина</span>
+                        </label>
+                    </span>
+                </div>
+                <div *ngIf="userStatus === 'waitingconfirm_noteditable' || userStatus === 'id_noteditable' || userStatus === 'waitingconfirmbank_noteditable'">
+                    {{formModel.gender}}
+                </div>
             </div>
         </div>
     </div>
@@ -68,15 +93,46 @@
                 <div class="kmp__form__label">Адрес</div>
             </div>
             <div class="col-8-sm">
-                <div class="slds-form-element">
-                    <div class="slds-form-element__control">
-                        <textarea id="textarea-input-01" class="slds-textarea" [(ngModel)]="formModel.address" placeholder="Ваш адрес"></textarea>
+                <div *ngIf="userStatus === 'notid_editable'">
+                    <div class="slds-form-element">
+                        <div class="slds-form-element__control">
+                            <textarea id="textarea-input-01" class="slds-textarea" [(ngModel)]="formModel.address" placeholder="Ваш адрес"></textarea>
+                        </div>
                     </div>
+                </div>
+                <div *ngIf="userStatus === 'waitingconfirm_noteditable' || userStatus === 'id_noteditable' || userStatus === 'waitingconfirmbank_noteditable'">
+                    {{formModel.address}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="kmp__form__item" *ngIf="userStatus === 'waitingconfirm_noteditable' || userStatus === 'id_noteditable' || userStatus === 'waitingconfirmbank_noteditable'">
+        <div class="row">
+            <div class="col-4-sm">
+                <div class="kmp__form__label"><strong>Статус</strong></div>
+            </div>
+            <div class="col-8-sm">
+                <div *ngIf="formModel.status === 'not_confirm'">
+                    <strong>Не идентифицирован</strong>
+                </div>
+                <div *ngIf="formModel.status === 'pending'">
+                    <strong>В ожидании</strong>
+                </div>
+                <div *ngIf="formModel.status === 'customer_accept'">
+                    <strong>Идентифицирован</strong>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+<p *ngIf="userStatus === 'id_noteditable'" style="font-size: 14px; padding: 20px; margin-top: 25px;" class="text-center">Вы идентифицированы в банке.</p>
+<p *ngIf="userStatus === 'waitingconfirmbank_noteditable'" style="font-size: 14px; padding: 20px; margin-top: 25px;" class="text-center">Ожидается потверждение Ваших данных со стороны банка.</p>
 
-<div class="kmp__btn kmp__btn--sticky kmp__btn--primary" (click)="saveUserData(formModel)">Сохранить</div>
+<div *ngIf="userStatus === 'waitingconfirm_noteditable'" style="padding: 15px;margin-top: 25px;">
+    <div *ngIf="formModel.status === 'pending'" class="kmp__btn kmp__btn--rounded kmp__btn--primary" (click)="confirmDetails()" style="margin-bottom: 20px;">Пройти идентификацию</div>
+    <div *ngIf="formModel.status !== 'pending'" class="kmp__btn kmp__btn--rounded kmp__btn--primary" (click)="refreshDetails()" style="margin-bottom: 20px;">Обновить статус</div>
+    <div class="kmp__btn kmp__btn--rounded kmp__btn--outline" (click)="editDetails()">Редактировать</div>
+</div>
+
+<div *ngIf="userStatus === 'notid_editable'" class="kmp__btn kmp__btn--sticky kmp__btn--primary" (click)="saveUserData(formModel)">Сохранить</div>
