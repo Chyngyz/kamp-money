@@ -5,7 +5,7 @@
             <div class="kmp__icon-title">Быстрая оплата</div>
         </div>
         <div class="kmp__main__c">
-            <div [routerLink]="['/add-money']" class="kmp__balance">1200<span class="kmp__currency-title">c</span></div>
+            <div [routerLink]="['/add-money']" class="kmp__balance">{{ balance }} <span class="kmp__currency-title">c</span></div>
             <div [routerLink]="['/add-money']" class="kmp__balance-pay">Пополнить баланс</div>
         </div>
         <div class="kmp__main__r" [routerLink]="['/add-money']">
@@ -18,7 +18,7 @@
             <div class="kmp__history-btn">
                 <img src="/img/history.svg" alt="">
             </div>
-            <div class="kmp__refresh-btn">
+            <div class="kmp__refresh-btn" (click)="getUserBalance()">
                 <img src="/img/refresh.svg" alt="">
             </div>
             <div [routerLink]="['/settings-main']" class="kmp__settings-btn">

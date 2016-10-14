@@ -10,6 +10,7 @@ import { Observable } from 'rxjs/Observable';
 export class ApiService {
   private apiRegUrl = `${AppSettings.API_ENDPOINT}/registration`;
   private apiUserDetailsUrl = `${AppSettings.API_ENDPOINT}/customer_detail_info`;
+  private apiUserBalanceUrl = `${AppSettings.API_ENDPOINT}/kamp_customer_details/customer_balance`;
 
   constructor(private _http: Http) {}
 
@@ -33,6 +34,14 @@ export class ApiService {
 
   getAppId() {
     return Math.floor((Math.random() * 10) + 1);
+  }
+
+  getUserBalance(data) {
+    return this._http.post(this.apiUserBalanceUrl, JSON.stringify(data), {
+            headers: this.getHeaders()
+        })
+        .map(this.extractData)
+        .catch(this.handleError);
   }
 
   getToken() {
