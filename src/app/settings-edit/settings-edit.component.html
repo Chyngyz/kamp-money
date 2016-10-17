@@ -119,7 +119,10 @@
                     <strong>В ожидании</strong>
                 </div>
                 <div *ngIf="formModel.status === 'customer_accept'">
-                    <strong>Идентифицирован</strong>
+                    <strong>В ожидании от Банка</strong>
+                </div>
+                <div *ngIf="formModel.status === 'id_noteditable'">
+                    <strong>Идентифицированы</strong>
                 </div>
             </div>
         </div>
@@ -129,10 +132,10 @@
 <p *ngIf="userStatus === 'id_noteditable'" style="font-size: 14px; padding: 20px; margin-top: 25px;" class="text-center">Вы идентифицированы в банке.</p>
 <p *ngIf="userStatus === 'waitingconfirmbank_noteditable'" style="font-size: 14px; padding: 20px; margin-top: 25px;" class="text-center">Ожидается потверждение Ваших данных со стороны банка.</p>
 
-<div *ngIf="userStatus === 'waitingconfirm_noteditable'" style="padding: 15px;margin-top: 25px;">
-    <div *ngIf="formModel.status === 'pending'" class="kmp__btn kmp__btn--rounded kmp__btn--primary" (click)="confirmDetails()" style="margin-bottom: 20px;">Пройти идентификацию</div>
-    <div *ngIf="formModel.status !== 'pending'" class="kmp__btn kmp__btn--rounded kmp__btn--primary" (click)="refreshDetails()" style="margin-bottom: 20px;">Обновить статус</div>
+<div *ngIf="userStatus === 'waitingconfirm_noteditable'" style="margin-top: 25px;">
+    <div *ngIf="formModel.status === 'pending'" class="kmp__btn kmp__btn--rounded kmp__btn--primary" (click)="confirmDetails()">Пройти идентификацию</div>
+    <div *ngIf="formModel.status !== 'pending'" class="kmp__btn kmp__btn--rounded kmp__btn--primary" (click)="refreshDetails()">Обновить статус</div>
     <div class="kmp__btn kmp__btn--rounded kmp__btn--outline" (click)="editDetails()">Редактировать</div>
 </div>
 
-<div *ngIf="userStatus === 'notid_editable'" class="kmp__btn kmp__btn--sticky kmp__btn--primary" (click)="saveUserData(formModel)">Сохранить</div>
+<div *ngIf="userStatus === 'notid_editable'" class="kmp__btn kmp__btn--rounded kmp__btn--primary" (click)="saveUserData(formModel)">Сохранить</div>

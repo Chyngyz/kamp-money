@@ -27,7 +27,7 @@ export class MainComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
-        this.getUserDataSubscription.unsubscribe();
+        // this.getUserDataSubscription.unsubscribe();
     }
 
     getUserBalance(userData?) {

@@ -21,7 +21,7 @@ import { AddMoneyBankComponent } from './add-money-bank/add-money-bank.component
 import { ApiService, AppReadyEvent, ModalViewService, LocalStorageService } from './shared';
 import { routing } from './app.routing';
 
-import { TabComponent, TabsComponent, CrossIconComponent } from './ui-components';
+import { TabComponent, TabsComponent, CrossIconComponent, TickIconComponent } from './ui-components';
 
 import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
 
@@ -51,7 +51,8 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
     // UI-components
     TabComponent,
     TabsComponent,
-    CrossIconComponent
+    CrossIconComponent,
+    TickIconComponent
   ],
   providers: [
     ApiService,

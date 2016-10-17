@@ -63,7 +63,7 @@ export class SettingsEditComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
-        this.getUserDataSubscription.unsubscribe();
+        // this.getUserDataSubscription.unsubscribe();
     }
 
     confirmDetails() {
@@ -75,6 +75,7 @@ export class SettingsEditComponent implements OnInit, OnDestroy {
                     this.modalViewService.announceModalView(+resp.error_code);
                 } else if (resp.submission_status === 'success') {
                     this.modalViewService.announceModalView(7001);
+                    this.refreshDetails();
                 }
             },
             error => console.log(error)
@@ -103,6 +104,7 @@ export class SettingsEditComponent implements OnInit, OnDestroy {
                 if (resp.submission_status && resp.submission_status === 'success') {
                     this.userStatus = 'waitingconfirm_noteditable';
                     this.formModel = obj;
+                    this.refreshDetails();
                 } else {
                     console.log('error');
                 }
