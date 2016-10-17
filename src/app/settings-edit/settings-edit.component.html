@@ -112,16 +112,16 @@
                 <div class="kmp__form__label"><strong>Статус</strong></div>
             </div>
             <div class="col-8-sm">
-                <div *ngIf="formModel.status === 'not_confirm'">
+                <div *ngIf="userStatus === 'not_confirm'">
                     <strong>Не идентифицирован</strong>
                 </div>
-                <div *ngIf="formModel.status === 'pending'">
+                <div *ngIf="userStatus === 'pending'">
                     <strong>В ожидании</strong>
                 </div>
-                <div *ngIf="formModel.status === 'customer_accept'">
+                <div *ngIf="userStatus === 'customer_accept'">
                     <strong>В ожидании от Банка</strong>
                 </div>
-                <div *ngIf="formModel.status === 'id_noteditable'">
+                <div *ngIf="userStatus === 'id_noteditable'">
                     <strong>Идентифицированы</strong>
                 </div>
             </div>
@@ -136,6 +136,14 @@
     <div *ngIf="formModel.status === 'pending'" class="kmp__btn kmp__btn--rounded kmp__btn--primary" (click)="confirmDetails()">Пройти идентификацию</div>
     <div *ngIf="formModel.status !== 'pending'" class="kmp__btn kmp__btn--rounded kmp__btn--primary" (click)="refreshDetails()">Обновить статус</div>
     <div class="kmp__btn kmp__btn--rounded kmp__btn--outline" (click)="editDetails()">Редактировать</div>
+</div>
+
+<div *ngIf="userStatus === 'waitingconfirmbank_noteditable'" style="margin-top: 25px;">
+    <div class="kmp__btn kmp__btn--rounded kmp__btn--primary" (click)="refreshDetails()">Обновить статус</div>
+</div>
+
+<div *ngIf="userStatus === 'id_noteditable'" style="margin-top: 25px;">
+    <div routerLink='/main' class="kmp__btn kmp__btn--rounded kmp__btn--outline">На главную</div>
 </div>
 
 <div *ngIf="userStatus === 'notid_editable'" class="kmp__btn kmp__btn--rounded kmp__btn--primary" (click)="saveUserData(formModel)">Сохранить</div>
