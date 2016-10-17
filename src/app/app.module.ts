@@ -18,6 +18,7 @@ import { SettingsEditComponent } from './settings-edit/settings-edit.component';
 import { AddMoneyMainComponent } from './add-money-main/add-money-main.component';
 import { AddMoneyBankComponent } from './add-money-bank/add-money-bank.component';
 import { AboutComponent } from './about/about.component';
+import { TransferComponent } from './transfer/transfer.component';
 
 import { ApiService, AppReadyEvent, ModalViewService, LocalStorageService } from './shared';
 import { routing } from './app.routing';
@@ -50,6 +51,7 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
     AddMoneyMainComponent,
     AddMoneyBankComponent,
     AboutComponent,
+    TransferComponent,
     // UI-components
     TabComponent,
     TabsComponent,

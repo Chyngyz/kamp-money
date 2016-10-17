@@ -11,9 +11,10 @@ import { SettingsEditComponent } from './settings-edit/settings-edit.component';
 import { AddMoneyMainComponent } from './add-money-main/add-money-main.component';
 import { AddMoneyBankComponent } from './add-money-bank/add-money-bank.component';
 import { AboutComponent } from './about/about.component';
+import { TransferComponent } from './transfer/transfer.component';
 
 const routes: Routes = [
-  { path: 'signin', component: SigninComponent },
+  // { path: 'signin', component: SigninComponent },
   { path: 'create', component: CreateComponent },
   { path: 'main', component: MainComponent },
   { path: 'payment-form', component: PaymentFormComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'add-money', component: AddMoneyMainComponent },
   { path: 'add-money-bank', component: AddMoneyBankComponent},
   { path: 'about', component: AboutComponent },
+  { path: 'transfer', component: TransferComponent },
   { path: '', component: HomeComponent }
 ];
 

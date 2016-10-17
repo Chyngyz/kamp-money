@@ -1,16 +1,16 @@
 <div class="kmp__settings">
     <ul class="kmp__settings__list">
         <li>
-            <a class="kmp__settings__item kmp__settings__item--arrow">О кошельке</a>
+            <a [routerLink]="['/about']" class="kmp__settings__item kmp__settings__item--arrow">О кошельке</a>
         </li>
         <li>
-            <a [routerLink]="['/settings-edit']" class="kmp__settings__item kmp__settings__item--arrow">Настройки</a>
+            <a [routerLink]="['/transfer']" class="kmp__settings__item kmp__settings__item--arrow">Перевод средств</a>
+        </li>
+        <li>
+            <a [routerLink]="['/settings-edit']" class="kmp__settings__item kmp__settings__item--arrow">Настройки пользователя</a>
         </li>
         <li>
             <a class="kmp__settings__item kmp__settings__item--arrow">История платежей</a>
-        </li>
-        <li>
-            <a class="kmp__settings__item kmp__settings__item--arrow">Статистика</a>
         </li>
         <li>
             <a class="kmp__settings__item kmp__settings__item--arrow kmp__settings__item--red" (click)="logOut()">Выход</a>

@@ -1,0 +1,23 @@
+<div class="kmp__logo kmp__logo--sm">
+    <div class="kmp__service__item">
+        <div class="kmp__service__icon">
+            <img src="/img/user.svg" alt="">
+        </div>
+        <div class="kmp__service__title">Перевод средств другому пользователю</div>
+    </div>
+</div>
+
+<div class="kmp__payment__form">
+  <div class="kmp__input">
+    <input type="tel" placeholder="Номер получателя">
+  </div>
+  <div class="kmp__input">
+    <input type="text" placeholder="Сумма перевода">
+  </div>
+
+  <div class="kmp__payment__remainder">
+      <p>Доступная сумма: <strong>{{balance}} сом</strong></p>
+  </div>
+</div>
+
+<div [routerLink]="['/payment-confirm']" class="kmp__btn kmp__btn--rounded kmp__btn--primary">Далее</div>
