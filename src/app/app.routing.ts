@@ -10,6 +10,7 @@ import { SettingsMainComponent } from './settings-main/settings-main.component';
 import { SettingsEditComponent } from './settings-edit/settings-edit.component';
 import { AddMoneyMainComponent } from './add-money-main/add-money-main.component';
 import { AddMoneyBankComponent } from './add-money-bank/add-money-bank.component';
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
   { path: 'signin', component: SigninComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'settings-edit', component: SettingsEditComponent },
   { path: 'add-money', component: AddMoneyMainComponent },
   { path: 'add-money-bank', component: AddMoneyBankComponent},
+  { path: 'about', component: AboutComponent },
   { path: '', component: HomeComponent }
 ];
 

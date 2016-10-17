@@ -34,6 +34,12 @@
             background-color: #fff;
             color: #2196f3;
         }
+
+        &--sm {
+            font-size: 1rem;
+            padding: 10px 15px;
+            display: inline-block;
+        }
     }
 
     &__history-btn, &__settings-btn {
