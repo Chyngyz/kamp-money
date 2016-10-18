@@ -13,6 +13,7 @@ export class ApiService {
   private apiUserBalanceUrl = `${AppSettings.API_ENDPOINT}/kamp_customer_details/customer_balance`;
   private apiUserDatailsUpdateUrl = `${AppSettings.API_ENDPOINT}/kamp_customer_details/create_update_detail`;
   private apiUserDatailsConfirmUrl = `${AppSettings.API_ENDPOINT}/kamp_customer_details/accept_detail`;
+  private apiTransferUrl = `${AppSettings.API_ENDPOINT}/transfer_funds`;
   
 
   constructor(private _http: Http) {}
@@ -21,6 +22,16 @@ export class ApiService {
     console.log(JSON.stringify(data));
 
     return this._http.post(this.apiRegUrl, JSON.stringify(data), {
+            headers: this.getHeaders()
+        })
+        .map(this.extractData)
+        .catch(this.handleError);
+  }
+
+  transferSend(data): Observable < any > {
+    console.log(JSON.stringify(data));
+
+    return this._http.post(this.apiTransferUrl, JSON.stringify(data), {
             headers: this.getHeaders()
         })
         .map(this.extractData)

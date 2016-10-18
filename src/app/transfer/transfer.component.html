@@ -9,10 +9,12 @@
 
 <div class="kmp__payment__form">
   <div class="kmp__input">
-    <input type="tel" placeholder="Номер получателя">
+    <input type="tel" placeholder="Номер получателя" [textMask]="{mask: mask}" [(ngModel)]="telNumber">
+    <p class="text-red text-warning" *ngIf="!telValid">Пожалуйста, введите правильный номер.</p>
   </div>
   <div class="kmp__input">
-    <input type="text" placeholder="Сумма перевода">
+    <input type="tel" placeholder="Сумма перевода" [(ngModel)]="amount">
+    <p class="text-red text-warning" *ngIf="!amountValid">Сумма должна быть больше 0</p>
   </div>
 
   <div class="kmp__payment__remainder">
@@ -20,4 +22,4 @@
   </div>
 </div>
 
-<div [routerLink]="['/payment-confirm']" class="kmp__btn kmp__btn--rounded kmp__btn--primary">Далее</div>
+<div (click)="transfer()" class="kmp__btn kmp__btn--rounded kmp__btn--primary">Далее</div>
