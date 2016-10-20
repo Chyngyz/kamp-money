@@ -112,13 +112,13 @@
                 <div class="kmp__form__label"><strong>Статус</strong></div>
             </div>
             <div class="col-8-sm">
-                <div *ngIf="userStatus === 'not_confirm'">
+                <div *ngIf="formModel.status === 'not_confirm'">
                     <strong>Не идентифицирован</strong>
                 </div>
-                <div *ngIf="userStatus === 'pending'">
+                <div *ngIf="formModel.status === 'pending'">
                     <strong>В ожидании</strong>
                 </div>
-                <div *ngIf="userStatus === 'customer_accept'">
+                <div *ngIf="formModel.status === 'customer_accept'">
                     <strong>В ожидании от Банка</strong>
                 </div>
                 <div *ngIf="userStatus === 'id_noteditable'">

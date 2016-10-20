@@ -1,0 +1,43 @@
+<div class="kmp__logo kmp__logo--sm">
+    <div class="kmp__service__item">
+        <div class="kmp__service__icon">
+            <img src="/img/user.svg" alt="">
+        </div>
+        <div class="kmp__service__title">Перевод средств другому пользователю</div>
+    </div>
+</div>
+
+<div class="kmp__payment">
+    <div class="kmp__payment__form-group">
+        <div class="row">
+            <div class="col-8-sm">
+                <div class="kmp__payment__label">Номер получателя</div>
+            </div>
+            <div class="col-4-sm">
+                <div class="kmp__payment__value">{{telNumber}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="kmp__payment__form-group">
+        <div class="row">
+            <div class="col-8-sm">
+                <div class="kmp__payment__label">Коммисия</div>
+            </div>
+            <div class="col-4-sm">
+                <div class="kmp__payment__value">0</div>
+            </div>
+        </div>
+    </div>
+    <div class="kmp__payment__form-group">
+        <div class="row">
+            <div class="col-8-sm">
+                <div class="kmp__payment__label">Сумма перевода</div>
+            </div>
+            <div class="col-4-sm">
+                <div class="kmp__payment__value">{{amount}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="kmp__btn kmp__btn--rounded kmp__btn--primary" (click)="confirmTransfer()">Подтвердить</div>

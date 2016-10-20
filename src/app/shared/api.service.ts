@@ -38,6 +38,16 @@ export class ApiService {
         .catch(this.handleError);
   }
 
+  transferConfirm(data): Observable < any > {
+    console.log(JSON.stringify(data));
+
+    return this._http.put(this.apiTransferUrl, JSON.stringify(data), {
+            headers: this.getHeaders()
+        })
+        .map(this.extractData)
+        .catch(this.handleError);
+  }
+
   getUserDetails(data) {
     return this._http.post(this.apiUserDetailsUrl, JSON.stringify(data), {
             headers: this.getHeaders()

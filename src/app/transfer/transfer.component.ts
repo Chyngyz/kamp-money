@@ -60,7 +60,7 @@ export class TransferComponent implements OnInit {
             this.amountValid = false;
         } else {
             this.data.source_number = userData.phone_number;
-            this.data.app_id = String(this.apiService.getAppId());
+            this.data.app_id = userData.app_id;
             this.data.app_token = this.apiService.getToken();
             this.data.requested_amount = this.amount;
             this.data.target_number = this.getTelFormated(this.telNumber);
@@ -83,9 +83,9 @@ export class TransferComponent implements OnInit {
                     this.telValid = true;
                     this.amountValid = true;
                     console.log("Wrong number format");
-                else if (resp.submission_status && resp.submission_status == 'success') {
-                    this.localStorageService.setObject('user',this.data);
-                    this.router.navigate(['/main']);
+                } else if (resp.submission_status && resp.submission_status == 'success') {
+                    this.localStorageService.setObject('transfer', this.data);
+                    this.router.navigate(['/transfer-confirm']);
                 }
                 },
                 error => console.log(error)
