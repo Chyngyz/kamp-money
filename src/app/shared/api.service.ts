@@ -14,6 +14,7 @@ export class ApiService {
   private apiUserDatailsUpdateUrl = `${AppSettings.API_ENDPOINT}/kamp_customer_details/create_update_detail`;
   private apiUserDatailsConfirmUrl = `${AppSettings.API_ENDPOINT}/kamp_customer_details/accept_detail`;
   private apiTransferUrl = `${AppSettings.API_ENDPOINT}/transfer_funds`;
+  private apiTHistoryUrl = `${AppSettings.API_ENDPOINT}/balance_histories`
   
 
   constructor(private _http: Http) {}
@@ -58,6 +59,14 @@ export class ApiService {
 
   confirmUserDetails(data) {
     return this._http.post(this.apiUserDatailsConfirmUrl, JSON.stringify(data), {
+            headers: this.getHeaders()
+        })
+        .map(this.extractData)
+        .catch(this.handleError);
+  }
+
+  getTransactionsHistory(data) {
+    return this._http.post(this.apiTHistoryUrl, JSON.stringify(data), {
             headers: this.getHeaders()
         })
         .map(this.extractData)

@@ -13,6 +13,7 @@ import { AddMoneyBankComponent } from './add-money-bank/add-money-bank.component
 import { AboutComponent } from './about/about.component';
 import { TransferComponent } from './transfer/transfer.component';
 import { TransferConfirmComponent } from './transfer-confirm/transfer-confirm.component';
+import { TransactionsHistoryComponent } from './t-history/t-history.component';
 
 const routes: Routes = [
   // { path: 'signin', component: SigninComponent },
@@ -26,7 +27,8 @@ const routes: Routes = [
   { path: 'add-money-bank', component: AddMoneyBankComponent},
   { path: 'about', component: AboutComponent },
   { path: 'transfer', component: TransferComponent },
-  { path: 'transfer-confirm', component: TransferConfirmComponent }
+  { path: 'transfer-confirm', component: TransferConfirmComponent },
+  { path: 'transactions-history', component: TransactionsHistoryComponent },
   { path: '', component: HomeComponent }
 ];
 

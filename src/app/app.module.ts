@@ -20,6 +20,7 @@ import { AddMoneyBankComponent } from './add-money-bank/add-money-bank.component
 import { AboutComponent } from './about/about.component';
 import { TransferComponent } from './transfer/transfer.component';
 import { TransferConfirmComponent } from './transfer-confirm/transfer-confirm.component';
+import { TransactionsHistoryComponent } from './t-history/t-history.component';
 
 import { ApiService, AppReadyEvent, ModalViewService, LocalStorageService } from './shared';
 import { routing } from './app.routing';
@@ -54,6 +55,7 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
     AboutComponent,
     TransferComponent,
     TransferConfirmComponent,
+    TransactionsHistoryComponent,
     // UI-components
     TabComponent,
     TabsComponent,
