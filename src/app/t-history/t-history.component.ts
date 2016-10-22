@@ -35,7 +35,7 @@ export class TransactionsHistoryComponent implements OnInit {
             resp => {
                 console.log(resp);
                 if(resp.transactions && resp.transactions['1']) {
-                    this.data = [resp.transactions];
+                    this.data = Object.keys(resp.transactions).map(function (key) { return resp.transactions[key]; });
                     this.transactionsExist = true;
                 } else {
                     this.transactionsExist = false;

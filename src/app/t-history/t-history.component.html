@@ -9,7 +9,7 @@
 <div class="kmp__settings">
     <ul class="kmp__settings__list" *ngIf="transactionsExist">
         <li *ngFor="let item of data; let i = index;">
-            <a class="kmp__settings__item">{{item[i + 1]?.amount}}c - {{item[i + 1]?.time | date:"dd.MM.yyyy"}}</a>
+            <a class="kmp__settings__item">{{item?.amount}}c - {{item?.time | date:"dd.MM.yyyy HH:mm"}}</a>
         </li>
     </ul>
     <p *ngIf="!transactionsExist" class="text-center">История пустая</p>

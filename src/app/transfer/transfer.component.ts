@@ -84,7 +84,11 @@ export class TransferComponent implements OnInit {
                     this.amountValid = true;
                     console.log("Wrong number format");
                 } else if (resp.submission_status && resp.submission_status == 'success') {
-                    this.localStorageService.setObject('transfer', this.data);
+                    let transferDetails: any = resp;
+                    transferDetails.requested_amount = this.data.requested_amount;
+                    transferDetails.target_number = this.data.target_number;
+
+                    this.localStorageService.setObject('transfer', transferDetails);
                     this.router.navigate(['/transfer-confirm']);
                 }
                 },

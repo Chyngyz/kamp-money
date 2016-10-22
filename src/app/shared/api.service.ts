@@ -39,10 +39,10 @@ export class ApiService {
         .catch(this.handleError);
   }
 
-  transferConfirm(data): Observable < any > {
+  transferConfirm(data, id): Observable < any > {
     console.log(JSON.stringify(data));
 
-    return this._http.put(this.apiTransferUrl, JSON.stringify(data), {
+    return this._http.put(`${this.apiTransferUrl}/${id}`, JSON.stringify(data), {
             headers: this.getHeaders()
         })
         .map(this.extractData)

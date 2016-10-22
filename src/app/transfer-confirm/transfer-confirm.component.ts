@@ -11,6 +11,7 @@ export class TransferConfirmComponent implements OnInit {
     private getUserDataSubscription: any;
     public telNumber: any;
     public amount: any;
+    public transactionId: any;
 
     constructor(
         private apiService: ApiService,
@@ -25,17 +26,23 @@ export class TransferConfirmComponent implements OnInit {
         if(!transferData) {
             this.router.navigate(['/transfer'])
         } else {
-            this.telNumber = transferData.source_number;
+            this.telNumber = transferData.target_number;
             this.amount = transferData.requested_amount;
+            this.transactionId = transferData.transaction_number;
         }
     }
 
     confirmTransfer() {
         let userData = this.localStorageService.getObject('user');
+        userData.approved = 1;
+
         
-        this.apiService.transferConfirm(userData).subscribe(
+        this.apiService.transferConfirm(userData, this.transactionId).subscribe(
             resp => {
-                console.log(resp);
+                if (resp.transaction_status && resp.transaction_status === 'complete') {
+                    this.modalViewService.announceModalView(9001);
+                    this.router.navigate(['/transactions-history']);
+                }
             },
             error => {
                 console.log(error);
