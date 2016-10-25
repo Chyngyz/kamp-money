@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { ApiService, LocalStorageService } from '../shared';
+import { ApiService, ModalViewService, LocalStorageService } from '../shared';
 
 @Component({
     selector: 'kmp-main',
@@ -14,6 +14,7 @@ export class MainComponent implements OnInit, OnDestroy {
     constructor(
         private apiService: ApiService,
         private router: Router,
+        private modalViewService: ModalViewService,
         private localStorageService: LocalStorageService) { }
 
     ngOnInit() {
@@ -37,7 +38,13 @@ export class MainComponent implements OnInit, OnDestroy {
         this.getUserDataSubscription = this.apiService.getUserBalance(userData).subscribe(
             resp => {
                 console.log(resp);
-                this.balance = resp.customer_balance;
+                if (resp.submission_status && resp.submission_status === 'error' && resp.message_code === '3805') {
+                    this.modalViewService.announceModalView(3805);
+                    this.localStorageService.removeItem('user');
+                    this.router.navigate(['/']);
+                } else if (resp.submission_status && resp.submission_status === 'success') {
+                    this.balance = resp.customer_balance;
+                }
             },
             error => console.log(error)
         );
