@@ -21,6 +21,7 @@ function BuildServices {
   # build angular was disabled until Chyngyz fixes it
   [ -s "$NVM_DIR/nvm.sh" ] 
   source "$NVM_DIR/nvm.sh" 
+  npm install
   npm run clean-install  # download dependencies if any
   npm run build  # build the angular app
 }
