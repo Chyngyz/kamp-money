@@ -3,8 +3,7 @@ export DEBIAN_FRONTEND=noninteractive
 set -ex
 
 function SetVariables {
-  export ${HOME_FOLDER}=$( pwd )
-  export remote_demo_host=kampmoney@demo.kampmoney
+  export ${HOME_FOLDER}="$( dirname "${BASH_SOURCE[0]}" )"
   export VERSION_NUMBER=0.1.${1}
   export NVM_DIR="/var/lib/jenkins/.nvm"
 }
@@ -12,7 +11,8 @@ function SetVariables {
 function PutVersionNumber {
   set +x
   set -x
-  echo ${1} > ${HOME_FOLDER}/version.txt
+  txt="kampmoney-mobile-web "$'\n'"version number $1 built on $( date +"%F %T %Z" )"
+  echo ${txt} > ${HOME_FOLDER}/version.txt
 }
 
 
