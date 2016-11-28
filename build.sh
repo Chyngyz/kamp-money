@@ -3,7 +3,7 @@ export DEBIAN_FRONTEND=noninteractive
 set -ex
 
 function SetVariables {
-  export ${HOME_FOLDER}="$( dirname "${BASH_SOURCE[0]}" )"
+  export HOME_FOLDER="$( dirname "${BASH_SOURCE[0]}" )"
   export VERSION_NUMBER=0.1.${1}
   export NVM_DIR="/var/lib/jenkins/.nvm"
 }
