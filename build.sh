@@ -3,7 +3,7 @@ export DEBIAN_FRONTEND=noninteractive
 set -ex
 
 function SetVariables {
-  source "$( dirname "${BASH_SOURCE[0]}" )/settings.sh"
+  export ${HOME_FOLDER}=$( pwd )
   export remote_demo_host=kampmoney@demo.kampmoney
   export VERSION_NUMBER=0.1.${1}
   export NVM_DIR="/var/lib/jenkins/.nvm"
